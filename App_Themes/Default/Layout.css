@@ -1,0 +1,568 @@
+﻿body
+{
+	/*background-color:#f2f2f2;#b6b7bc;*/
+	background:url(Images/background_main.jpg) repeat top;
+    font-size: .80em;
+    font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    color: #696969;
+}
+.page
+{
+    width: 900px;
+    background-color: #fff;
+    margin: 20px auto 0px auto;
+    border: 1px solid #FFFFFF;
+}
+.footer
+{
+    color: #4e5766;
+    padding: 8px 0px 0px 0px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: normal;
+}
+
+.BodyText
+{
+	font-family: Tahoma;
+	font-size: 10pt;
+	color: Black;
+}
+.MainTable
+{
+	border-style: none;
+	border-color: inherit;
+	border-width: 0;
+	width: 899px;
+ background-color: #f2f2f2;
+    height: 542px;
+}
+.GridHeader
+{
+	/*background-color:#4682b4;*/
+	background-image: url(../Images/GridHeaderBack.html);
+	font-family: Tahoma;
+	font-size: 10pt;
+	color: #FFFFFF;
+	border-style: solid;
+	border-width: 0px;
+}
+
+.GridColumnLeft
+{
+	font-family: Tahoma;
+	font-size: 8pt;
+	color: Black;
+	text-align: left;
+	border-width: 0px;
+	border-left-style: none;
+}
+.GridColumnRight
+{
+	font-family: Tahoma;
+	font-size: 8pt;
+	color: Black;
+	text-align: right;
+	border-width: 0px;
+}
+
+.GridColumnCenter
+{
+	font-family: Tahoma;
+	font-size: 8pt;
+	color: Black;
+	text-align: center;
+	border-width: 0px;
+}
+
+.MasterPageHeader
+{
+	height: 100px;
+	width: 100%;
+	text-align: right;
+	vertical-align: top;
+}
+.MasterPageFooter
+{
+	height: 30px;
+	width: 100%;
+	text-align: left;
+}
+
+.DisableTextbox
+{
+	font-family: Tahoma;
+	font-size: 8pt;
+	font-weight: normal;
+	border-color: #277FAF;
+	border-style: solid;
+	border-width: 1px;
+	height: 15px;
+	color: Black;
+	background-color:#FFFFE1;
+	cursor:wait;
+}
+.NormalTextbox
+{
+
+
+
+	border
+.NormalTextbox
+{
+
+
+
+	border: 1px solid #277FAF;
+    font-family: Tahoma;
+	font-size: 8pt;
+	font-weight: normal;
+	color: Black;	
+}
+
+ Tahoma;
+	
+	font-size: 8pt;
+	font-weight: normal;
+	border-color: #277FAF;
+	border-style: solid;
+	border-width: 1px;
+	height: 15px;
+	color: Black;
+}
+
+.NormalButtonTmp
+{
+	border: 1px solid Aqua;
+    background-color: #277FAF;
+	font-family: Tahoma;
+	font-size: 8pt;
+	font-weight: bold;
+	color: #f8d918;
+	cursor: pointer;
+	}
+.LinkButtonCss
+{
+	background-color: #277FAF;
+	font-family: Tahoma;
+	font-size: 8pt;
+	font-weight: bold;
+	text-decoration: none;
+	color: #f8d918;
+	border-width: 1px;
+	border-style: solid;
+	border-color: Aqua;
+	height: 16px;	
+	width:70px;
+}
+
+.TextBoxNormal
+{
+	border-color:#277FAF;
+	border-style:solid;
+	border-width:1px;
+	font-family:Tahoma;
+	font-size:8pt;
+	font-weight:normal;
+	height:15px;
+	background-color:Red;
+	color:Red;
+                       
+	}
+	
+	
+.LabelNormal
+{
+	font-fam
+	
+	
+.LabelNormal
+{
+	font-family: Tahoma;
+	font-size: 8pt;
+	font-weight: normal;
+	height: 15px;
+	color: Black;
+    text-align: left;
+}
+
+
+: Tahoma;
+	font-size: 8pt;
+	font-weight: normal;
+	color: Black;
+	color: #f8d918;
+	padding-right: 5px;
+	text-decoration: none; /*background-color:Lime;*/
+	height: 8px;
+}
+.DropDownInGridView
+{
+	height: 20px;
+	width:100px;
+	color: Black;
+	font-family: Tahoma;
+	font-size: 8pt;
+	font-weight: normal;
+	border-color: #277FAF;
+	border-style: solid;
+	border-width: 1px;
+}
+
+.DropDownNormal
+{
+	border: 1px solid #277FAF;
+    color: Black;
+	font-family: Tahoma;
+	font-size: 8pt;
+	font-weight: normal;
+	vertical-align:middle;
+	}
+.DropDownListDisable
+{
+	height: 20px;	
+	cursor:wait;
+	font-family: Tahoma;
+	font-size: 8pt;
+	font-weight: normal;
+	/*border-color: #277FAF;*/
+	border-color: Black;
+	border-style: solid;
+	border-width: 1px;
+	background-color:#FFFFE1;
+}
+.NoRecord
+{
+	font-family: Tahoma;
+	font-size: 8pt;
+	font-weight: normal;
+	color: Black;
+	background-color: #e4e4e4;
+	text-align: center;
+	height: 20px;
+}
+.lNoMsg
+{
+	display: none;
+}
+
+.lValidationMsg
+{
+	background-color: #FEFECB;
+	border: solid 1px #000000;
+	padding: 4px 4px 4px 8px;
+	width: 100%;
+	font-size: 10pt;
+	color: red;
+	font-family: Tahoma;
+	vertical-align: top;
+}
+.lErrorMsg
+{
+	background-color: #FEFECB;
+	border: solid 1px #000000;
+	width: 100%;
+	font-size: 10pt;
+	color: red;
+	font-family: Tahoma;
+	vertical-align: top;
+}
+.lWarningMsg
+{
+	background-color: #FEFECB;
+	border: solid 1px #000000;
+	width: 100%;
+	font-size: 10pt;
+	color: Black;
+	font-family: Tahoma;
+	vertical-align: top;
+}
+.ErrorMessage
+{
+	font-size: 10pt;
+	color: red;
+	font-family: Tahoma;
+}
+
+.HiddenControl
+{
+	display: none;
+	visibility: hidden;
+}
+
+.ShowControl
+{
+	visibility:visible;
+}
+.HiddenGridColumn
+{
+	visibility: hidden;
+	display: none;
+}
+.loginArea
+{
+	background-color: #b0d5e9;
+	width: 205px;
+}
+.MenuLinkButton
+{
+	font-family: Tahoma;
+	font-size: 8pt;
+	font-weight: normal;
+	height: 10px;
+	color: Black;
+	padding-left: 5px;
+	text-decoration: none;
+}
+
+
+#NoticeBoard
+{
+	height: 524px;
+	background-color: White;
+	width: 400px;
+}
+
+#MenuArea
+{
+	background-color: #b0d5e9;
+	width: 205px;
+}
+
+#table1,#td1
+{
+border-collapse:collapse;
+border: 1px solid #0f0;
+margin:0;
+padding:1; 	
+}
+
+.divT
+{
+	border: 1px solid #FFF;
+	margin:0;
+	padding:0;
+	overflow:auto;
+	overflow-x: hidden;
+	height:264px;
+	width:100%; 
+}
+
+.InnerTextBox
+{
+ font-size:12px;
+ font-weight:normal;
+ border-style:none; 
+ border-width: 0px; 
+ border-color: #277FAF; 
+ background-color: #277FAF; 
+ height: 13px; 
+ color: #FFFFFF; 
+}
+      
+tr.lightblue2{
+background-color: #CCFFFF;
+padding: 1px;
+border-bottom: 5px solid black;
+}
+
+tr.lightblue {
+border:1px solid black;
+margin-bottom:4px;
+} 
+
+.crsTable,#td
+{
+ font-size:10px;
+ font-weight:normal;
+ height: 13px; 
+ color: #000000; 
+ text-align:left;
+ width:100%; 
+}
+
+#th
+{
+background-color:green;
+color:white;
+}
+
+
+.GridViewHeaderStyle
+        {            
+        	text-align:center;
+            font-weight:bold;
+            font-size:11px;
+            font-style:normal;
+	        color:White;
+	        background-color: #277FAF;
+        }
+.VerticalFooter
+{
+		    font-weight:normal;
+            font-size:8px;
+            font-style:normal;
+        	text-align:center;
+	        background-color:#FF0066;
+	        direction:rtl;
+	        width:24px;
+}        
+.GridViewFooterStyle
+        {
+        	text-align:center;
+/*
+writing-mode: tb-rl;
+		-webkit-transform: rotate(90deg);	
+		-moz-transform: rotate(90deg);
+		-ms-transform: rotate(90deg);
+		-o-transform: rotate(90deg);
+		transform: rotate(90deg);
+		position: absolute;
+background-color:#FF0066;
+
+*/
+            font-weight:normal;
+            font-size:8px;
+            font-style:normal;
+	        background-color:#FFA0A0;
+        }        
+        .GridRowStyle
+        {
+            font-weight:normal;
+            font-size:10px;
+            font-style:normal;
+	        color:black;
+	        height:20px;
+	        background-color: White;
+        }       
+
+.GVFixedHeader { text-align:center;
+                    font-weight:bold;
+                    font-size:11px;
+                    font-style:normal;
+	                color:White;
+	                background-color: #277FAF;
+                  top: expression(Sys.UI.DomElement.getBounds(document.getElementById("divFixedH")).y-25);
+                 }
+.GVFixedFooter { font-weight:bold; background-color: Green; position:relative;
+                 bottom:expression(getScrollBottom(this.parentNode.parentNode.parentNode.parentNode));}
+                 
+.fixedHeader
+{
+
+font-weight:bold;
+position:absolute;
+background-color: #006699;
+color: #ffffff;
+height: 25px;
+top: expression(Sys.UI.DomElement.getBounds(document.getElementById("panelContainer")).y-25);
+                  top:expression(this.parentNode.parentNode.parentNode.scrollTop-1);
+}
+
+.normal
+{
+background-color:white !important;
+font-weight:normal;
+}
+.highlight
+{
+background-color:Yellow !important;
+font-weight:bold;
+}
+ 
+.highlight2
+{
+font-size:16pt !important;
+color:Red;
+} 
+
+.normal2
+{
+font-size:10pt !important;
+color:Black;
+}
+ 
+.gridcheckbox
+{
+    background-color:Yellow;
+}
+
+.RegNormalButton
+{
+	border: 1px solid Aqua;
+    background-color: Red;
+	font-family: Tahoma;
+	font-size: 9pt;
+	font-weight: bold;
+	color: White;
+	cursor:pointer;
+}
+
+#divNoticeImage 
+{    
+    height: 21px;
+} 
+
+#imgNotice  
+{
+	background-image:url('Images/Notice.jpg');
+	background-repeat:no-repeat;
+	vertical-align:middle;
+    height: 296px;
+    width: 303px;
+}            
+/*
+    background-c            
+/*
+                
+/*
+    background-c            
+/*
+    background-color: #277FAF;
+	color: #f8d918;
+
+.GVFixedHeader { font-weight:normal; background-image:url('../Images/GridFooterBack.jpg'); 
+                         position:relative; 
+                         top:expression(this.parentNode.parentNode.parentNode.scrollTop-1);
+                       }
+        .GVFixedFooter { font-weight:bold; background-color: Green; position:relative;
+                 bottom:expression(getScrollBottom(this.parentNode.parentNode.parentNode.parentNode));}
+#divTwssD th
+        {  
+        top: expression(document.getElementById("AdjResultsDiv").scrollTop-2);
+        left: expression(parentNode.parentNode.parentNode.parentNode.scrollLeft);
+        position: relative;
+        z-index: 20;
+        }
+*/
+
+.NormalButton
+{
+	font-family: Tahoma;
+	font-size: 8pt;
+	font-weight: bold;
+	color: #f8d918;
+	cursor: pointer;
+	
+	 -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    -moz-box-orient: vertical;
+    
+    background-image: linear-gradient(#277FAF 0px, #277FAF 100%);
+    background-color:#277FAF;
+    border-image: none;
+    border-radius: 5px 5px 5px 5px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 2px 2px #277FAF, 0 1px 0 #277FAF inset;
+    display: inline-block;
+    padding: 0px;
+    text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1);
+    vertical-align: middle;
+    -moz-box-orient: vertical;
+    }
+	

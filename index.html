@@ -1,0 +1,557 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.iras.iub.edu.bd/login/Default.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 May 2019 11:22:23 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta name="keywords" content="Online, Registration, Grade, iRAS, IUB, IU, Private University" /><meta name="iRAS" content="Integrated Registrar&#39;s Office Automation System" /><meta name="reg" content="Online Registration System" /><meta name="Registration" content="Online Registration System" /><meta name="IUB" content="Independent University, Bangladesh. Online Registration System" /><meta name="IU" content="Independent University, Bangladesh." /><meta name="Faculty" content="Faculty Evaluation System" /><meta name="grade" content="Online Grade Submition System" /><meta name="Private" content="Private University Online Registration System" /><meta name="University" content="Private University Online Registration System" /><title>
+	iRAS : Integrated Registrar's Office Automation System (IUB)
+</title><link rel="shortcut icon" href="http://www.iras.iub.edu.bd/iRAS.ico" /><link href="./App_Themes/Default/Layout.css" rel="stylesheet" type="text/css" /><link href="./App_Themes/Default/Menu.css" rel="stylesheet" type="text/css" /><link href="./App_Themes/FixedHeader.css" rel="stylesheet" type="text/css" />
+    
+    <style type="text/css">
+    
+  .LabelNormal
+  {
+      color:#000;
+  }
+  
+.primaryStaticMenu
+{
+   background-color: transparent;
+   float: left;
+}
+.primaryStaticMenuItem
+{
+   background-color:  #277FAF; 
+   border-width: 1px;
+   border-color: #efefef #aaab9c #ccc #efefef; 
+   border-style: solid;
+   color: #f8d918;
+   font-weight: bold;
+   padding: 0.2em 0.2em 0.2em 0.2em;
+}
+.primaryStaticHover
+{
+   color: #800000;
+   background: #f0e7d7;
+}
+
+.primaryDynamicMenu
+{   
+   background-color: #f7f2ea;               
+   border-bottom: solid 1px #ccc; 
+   z-index: 1000;    
+}  
+.primaryDynamicMenuItem
+{
+   background-color: #277FAF; 
+   color: #f8d918;
+   padding: 0.2em 0.2em 0.2em 0.2em;
+   border-width: 1px;
+   font-weight: bold;
+   border-color: #f7f2ea #aaab9c #f7f2ea #efefef;  
+   border-style: solid;   
+   z-index: 1000;        
+}    
+.primaryDynamicHover
+{
+   color: #800000;
+   background: #f0e7d7;
+}            
+
+.secondaryLevelOne
+{
+   background-color: transparent;
+   background-repeat: repeat-x;
+   margin: 1.5em 0 0 0;
+   padding: 0.2em 0.2em 0.2em 0.2em;
+   width: 12em; 
+   height: 35px;
+}
+.secondaryLevelTwo
+{
+   background: #FAFBFB;
+   padding: 0.2em 0.2em 0.2em 0.2em;
+}
+.secondaryStaticHover
+{
+   color: #800000;
+}
+    
+ .LabelLoginStatus
+{
+    color:#f8d918 !important;
+}
+    </style>
+    
+    
+    
+    <script language="javascript" type="text/javascript" src="./JS/jquery-1.6.2.js"></script>
+
+<script language="javascript" type="text/javascript">
+
+//    window.onload = NoticeBoard();
+
+    $('#body').ready(function () {
+        NoticeBoard();
+    });
+
+    function loadXMLDoc(dname) {
+        if (window.XMLHttpRequest) {
+            xhttp = new XMLHttpRequest();
+        }
+        else {
+            xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xhttp.open("GET.html", dname, false);
+        xhttp.send("");
+        return xhttp.responseXML;
+    }
+    function NoticeBoard() {
+        try {
+            xml = loadXMLDoc("http://www.iras.iub.edu.bd/Docs/xml/Notice.xml");
+            xsl = loadXMLDoc("./Docs/xml/Notice.xsl");
+            //document.getElementById("xmlNotice").innerHTML = "";
+            // code for IE
+            if (window.ActiveXObject) {
+                ex = xml.transformNode(xsl);
+                document.getElementById("xmlNotice").innerHTML = ex;
+            }
+            // code for Mozilla, Firefox, Opera, etc.
+            else if (document.implementation && document.implementation.createDocument) {
+                xsltProcessor = new XSLTProcessor();
+                xsltProcessor.importStylesheet(xsl);
+                resultDocument = xsltProcessor.transformToFragment(xml, document);
+                document.getElementById("xmlNotice").appendChild(resultDocument);
+            }
+        } catch (e) {
+        //alert("error: " + e.Message);
+        }
+    }
+
+
+/*
+    var timeInSec = 20000;
+//    window.onload = setDivValue();  //Default.getRegDateTime().toString();
+
+
+        var auto_refresh = setInterval(
+        function () {
+            $('#RegDateTime').fadeOut('slow').load('NoPermissionPage.aspx').fadeIn("slow");
+        }, 50000);
+
+
+        setInterval("SANAjax();", 50000);  ///////// 10 seconds
+
+        $(function () {
+            SANAjax = function () {
+
+                $('#dataDisplay').prepend("Hi This is auto refresh example for you - w3cgallery.com <br><br>").fadeIn("slow");
+
+            }
+        });
+
+
+
+//        setInterval("setRegDateTime();", timeInSec);
+//        setInterval("setRegNoticeInfo();", timeInSec);
+//        setInterval("ResetTimer();", 30000);
+
+        function ResetTimer() {
+            timeInSec = 3000000;
+        }
+
+        function setRegNoticeInfo() {
+            var strRegDateTime = Default.getRegDateTime();
+            var divRegDateTime = document.getElementById("RegNoticeInfo");
+//            divRegDateTime.innerHTML = strRegDateTime.value;
+        }
+
+        function setRegDateTime() {
+            var strRegDateTime = Default.getRegDateTime();
+            var divRegDateTime = document.getElementById("RegDateTime");
+            divRegDateTime.innerHTML = strRegDateTime.value;
+        }
+
+        */
+
+</script>
+
+    <style type="text/css">
+        .style1
+        {
+        }
+        .style2
+        {
+            height: 27px;
+            width: 117px;
+        }
+        .style3
+        {
+            color: #FF33CC;
+        }
+        .style4
+        {
+            text-decoration: underline;
+        }
+        #RegDateTime
+        {
+            height: 114px;
+        }
+        #NewStudentInfo
+        {
+            color: #0000FF;
+            font-size: larger;
+        }
+        p.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	}
+       
+        .style9
+        {
+            color: #0066FF;
+        }              
+       
+        .style11
+        {
+            width: 446px;
+            height: 280px;
+        }
+       
+        .style12
+        {
+            width: 458px;
+        }
+       
+        .style13
+        {
+            font-size: 22px;
+            color: #FF33CC;
+        }
+       
+        </style>
+</head>
+<body>
+    <form name="aspnetForm" method="GET" action="login.php" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTIzNDY5NzY5OA9kFgJmD2QWAgIDD2QWBGYPDxYCHgRUZXh0BRRMb2dnZWQgaW4gYXMgOiBHdWVzdGRkAgUPZBYCAhkPEA8WBh4ORGF0YVZhbHVlRmllbGQFCEdST1VQX0lEHg1EYXRhVGV4dEZpZWxkBQpHUk9VUF9OQU1FHgtfIURhdGFCb3VuZGdkEBUTDUFkbWluaXN0cmF0b3IJQWRtaXNzaW9uFEZpbmFuY2UgYW5kIEFjY291bnRzB0ZhY3VsdHkHU3R1ZGVudAVHdWVzdANTb0QNU2Nob29sTWFuYWdlchdPZmZpY2Ugb2YgdGhlIFJlZ2lzdHJhcgNIUkQXQ29udHJvbGxlck9mRXhhbWluYXRpb24ERGVhbgRIZWFkD0V4ZWN1dGl2ZU9mZmljZQdMaWJyYXJ5BENJVFMRUmVnaXN0cmFyT2ZmaWNlIDIDQ0dQC1dlYiBTZXJ2aWNlFRMDMDAxAzAwMgMwMDMDMDA0AzAwNQMwMDYDMDA3AzAwOAMwMDkDMDEwAzAxMQMwMTIDMDEzAzAxNAMwMTUDMDE2AzAxNwMwMTgDMDk5FCsDE2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dkZGQqUtOAvuQmhL/uhH/nJfz7W0B4f/u2wiL1Qqg1UiKfhg==" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="http://www.iras.iub.edu.bd/WebResource.axd?d=RnUKWE6CeV6CbezZUZE7b-a6R51Fa7-N0bV7YWrM_Y6ix_9EeNXNfL2wOODzX0qPotMZkAcqCkV1QRKCBRhChh-vD4f12Dilt265yUEsXZE1&amp;t=635818115491585941" type="text/javascript"></script>
+
+
+<script type="text/javascript" src="http://www.iras.iub.edu.bd/ajaxpro/prototype.ashx"></script>
+<script type="text/javascript" src="http://www.iras.iub.edu.bd/ajaxpro/core.ashx"></script>
+<script type="text/javascript" src="http://www.iras.iub.edu.bd/ajaxpro/converter.ashx"></script>
+<script type="text/javascript" src="http://www.iras.iub.edu.bd/ajaxpro/Default,App_Web_snm2liz2.ashx"></script>
+
+<script src="http://www.iras.iub.edu.bd/WebResource.axd?d=0msr4n22HH-plro84uL5rRwHI6p1B6lQ2oJhEIOOvwNtmXM2qiQSqhCStu3IaXC7BDmfj3-rm6SEmo5pIvPGBUHpsMNj10CYJ8JQ8-EQ4F01&amp;t=635818115491585941" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="25748CED" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdABfSgdyhEb9sKZbI90GvsAW1EBY3FYPlMHMvBl/FkZ1b6E6g0q8swF5GCcWuuyNT+oJyFFQupc4/hEB8HSv6TGw6/tL6hhrsXznK1zBmx7NFEHZCa7eCiHanuF9Bm2Padc+C8tc4hviW/D0eHgW70SpRb/Rb2DDOn7ezE0GOWUpCnlruXTCUzLkdEtIWnxomi+Sxc3eoZIgFwZIZf2HNiFSMopqGFjtYIz11gsGMl/dkJ4aATFIaHvqS46/Tk7cFEQZwqxMQZ4GLcTKFOl+VyBcgTXqcYm3q4onCXAR9TnVdnKPbH95A3a8vwzM9ATFFrJYxQFis8UE4vu47Cnbw/rgP8Iujrpc4xi7EQvKF9s2MmPcnPT57lpMIOM7EOfV6m43wMZNGbC0xNCrjarVZ/sWYsZ8YG6yn01ar1VVtd2iKn1MNZ+GBdTgbAq3zSqU31O/ZWeKAtXD4waweL4Q8x2FH5+CkA2MTDi0ZoWo5DfcSmR82rv7v8hIu0Voah4Lyexz2B4G4GrTg/lSdhbnyS4Uz" />
+</div>
+    <div align="center" class="page">
+        <table style="width: 900px;" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td class="MasterPageHeader" style="background-image:url('./Images/Banner2.jpg')">
+                <div>
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" height="20px">
+                        <tr>
+                            <td align="right" valign="bottom">
+                                <span id="ctl00_lblLogedinID" class="LabelLoginStatus">Logged in as : Guest</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right" valign="top">
+                                
+                            &nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                    </div>
+                  </td>
+            </tr>
+            <tr >
+            <td style="padding-left:4px; background-image:url(./Images/MainMenu2.jpg);height:29px;text-align:left;" >
+                    
+                
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                                    <span id="ctl00_lblMsg"></span>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    
+    <table border="0" cellspacing="0" cellpadding="0" class="MainTable">
+        <tr>
+            <td colspan="3" style="height:20px;">
+                <span id="ctl00_cphBody_lblWelcomdeNote" style="display:inline-block;width:183px;"> </span></td>
+        </tr>
+
+       
+
+        <tr>
+            <td colspan="3">
+                <table border="0" cellspacing="0" cellpadding="0" style="width: 100%; height: 526px;">
+                    <tr>
+                        <td style="width: 210px; text-align: left; vertical-align: top;">
+                            <div id="MenuArea" style="width: 100%; height: 216px;">
+                                <table border="0" cellspacing="0" cellpadding="3" 
+                                    style="width: 100%; height: 210px;">
+                                    <tr>
+                                        <td 
+                                            style="height:15px; text-align: center; background-image: url(./Images/GridFooterBack.jpg); background-repeat:no-repeat;
+                                            text-align: center; font-family: Tahoma; font-weight: bold; color: #f8d918; font-size: 10pt;">
+                                            <span id="ctl00_cphBody_Label8">Information</span>
+                                        </td>                                       
+                                    </tr>
+                                    <tr>
+                                        <td> 
+                                            &nbsp;</td>                                       
+                                    </tr>
+                                    <tr>
+                                        <td style="vertical-align:top; text-align: left; height:124px" class="style3">
+                                            <b><span class="style4">Registrar&#39;s Office</span><br />
+                                            Phone: 
+                                            880+28431645 - 53<br />
+                                            Ext. 
+                                            1304&nbsp; 1305&nbsp; 1306<br /></b>
+                                            <div id="RegDateTime">
+                                                <b style="text-decoration: blink; color:Red; cursor:default;"> <br />
+                                                </b>
+                                                <br />
+                                                <div><iframe src="http://www.facebook.com/plugins/like.php?href=http%3a%2f%2fwww.iras.iub.edu.bd%2firas%2flogin%2fdefault.aspx&amp;layout=button_count&amp;show_faces=true&amp;width=190&amp;action=like&amp;colorscheme=light&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:190px; height:35px;" allowTransparency="true"></iframe></div>
+                                                </div>
+                                                <p style="text-align:center;">
+                                                   <a style="font-size:16px;font-weight:bold; cursor:pointer;text-decoration:none;color:Green;background-color:Yellow;" target="_blank" href="http://www.iras.iub.edu.bd/Admission/Default.aspx">Undergraduate Online Admission Form</a>
+                                                </p>
+                                        <p style="text-align: justify;display:none;" class="style9">
+                                            <span style="font-size:12.0pt;line-height:115%;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;"><strong>
+                                            Due to server congestion during registration period, sometime you will not be able to “Export Registration Bill”. 
+                                            Don’t be panicked! Just try after registration period. Go to the menu “Reports</strong><strong> -> </strong></span>
+                                            <span style="font-size:12.0pt;line-height:115%;
+                                            font-family:&quot;Times New Roman&quot;,&quot;serif&quot;"><strong>Bills &amp;Transcript” and then click “Load Billing Info” and then 
+                                            select your expected bill and “Export” the bill.</strong><o:p></o:p></span></p>
+                                           </td>
+                                    </tr>
+                                    </table>
+                            </div>
+                        </td>
+                        <td style="vertical-align: top;" align="center" class="style12">
+                            <div id="NoticeBoard" style="width: 99%; text-align: left;">
+                                <table border="0" cellspacing="0" cellpadding="3" 
+                                    style="width: 100%; height: 25px;">
+                                    <tr>
+                                        <td colspan="2" style="text-align: center; background-image: url(./Images/GridFooterBack.jpg); background-repeat:no-repeat;
+                                            text-align: center; font-family: Tahoma; font-weight: bold; color: #f8d918; font-size: 10pt;">
+                                            <span id="ctl00_cphBody_Label7">Notice Board</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div id="xmlNotice" style="margin:3px;text-align: justify;" class="style13"><strong>
+                                    In addition to bank payment, now you can also pay your fees through ONLINE</strong></div>
+                                <br />
+                                <div id="divNoticeImage" align="center">
+                                    &nbsp;<img alt="LFE notice" class="style11" src="./Docs/no_notice.jpg" /></div>
+                                  
+                          </div>
+                        </td>
+                        <td style="width: 230px; text-align: left; vertical-align: top;">
+                            <div class="loginArea" style="width: 100%">
+                                <table border="0" cellspacing="0" cellpadding="3" style="width: 100%">
+                                    <tr>
+                                        <td colspan="3" style="text-align: center; background-image: url(./Images/GridFooterBack.jpg); background-repeat:no-repeat;
+                                            text-align: center; font-family: Tahoma; font-weight: bold; color: #f8d918; font-size: 10pt;">
+                                            <span id="ctl00_cphBody_Label1">Logon</span>
+                                        </td>
+                                       
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" class="style1">
+                                            <span id="ctl00_cphBody_lblLogonID" class="LabelNormal" style="padding-left: 5px;">Logon ID</span>
+                                        </td>
+                                        <td style="width: 100px">
+                                            <input name="ctl00$cphBody$txtUserID" type="text" maxlength="20" id="ctl00_cphBody_txtUserID" class="NormalTextbox" style="width:145px;width: 145px;" />
+                                        </td>
+                                        <td style="width: 5px">
+                                            <span id="ctl00_cphBody_rfvUserID" class="ErrorMessage" style="color:Red;visibility:hidden;">*</span>
+                                            </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left; " class="style2">
+                                            <span id="ctl00_cphBody_lblPassword" class="LabelNormal" style="padding-left: 5px;">Password</span>
+                                        </td>
+                                        <td style="width: 100px; height: 27px;">
+                                            <input name="ctl00$cphBody$txtPassword" type="password" maxlength="20" id="ctl00_cphBody_txtPassword" class="NormalTextbox" style="width:145px;width: 145px;" />
+                                        </td>
+                                        <td style="width: 5px; height: 27px;">
+                                        <span id="ctl00_cphBody_rfvPassword" class="ErrorMessage" style="color:Red;visibility:hidden;">*</span>
+                                            </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" class="style1">
+                                            <span id="ctl00_cphBody_Label2" class="LabelNormal" style="padding-left: 5px;">Group</span>
+                                        </td>
+                                        <td style="width: 100px; text-align: left;">
+                                            <select name="ctl00$cphBody$ddGroups" id="ctl00_cphBody_ddGroups" class="DropDownNormal" style="height:20px;width:148px;">
+	<option value="001">Administrator</option>
+	<option value="002">Admission</option>
+	<option value="003">Finance and Accounts</option>
+	<option value="004">Faculty</option>
+	<option value="005">Student</option>
+	<option value="006">Guest</option>
+	<option value="007">SoD</option>
+	<option value="008">SchoolManager</option>
+	<option value="009">Office of the Registrar</option>
+	<option value="010">HRD</option>
+	<option value="011">ControllerOfExamination</option>
+	<option value="012">Dean</option>
+	<option value="013">Head</option>
+	<option value="014">ExecutiveOffice</option>
+	<option value="015">Library</option>
+	<option value="016">CITS</option>
+	<option value="017">RegistrarOffice 2</option>
+	<option value="018">CGP</option>
+	<option value="099">Web Service</option>
+
+</select>
+                                        </td>
+                                        <td style="width: 5px; text-align: left;">
+                                            &nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="style1">
+                                        </td>
+                                        <td style="width: 100px;">
+                                            <input type="submit" name="ctl00$cphBody$btnSignIn" value="Sign In" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$cphBody$btnSignIn&quot;, &quot;&quot;, true, &quot;vgLogin&quot;, &quot;&quot;, false, false))" id="ctl00_cphBody_btnSignIn" class="NormalButton" style="height:22px;width:148px;" />
+                                        </td>
+                                        <td style="width: 5px;">
+                                            &nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            <span id="ctl00_cphBody_lblLogonErrorMessage" class="ErrorMessage">  </span>
+                                        </td>
+           
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" style="height: 35px;">
+                                             &nbsp;
+                                        </td>
+           
+                                    </tr>
+                                    <tr>
+                                       
+                                          <td colspan="3" style="text-align: center; background-image: url(./Images/GridFooterBack.jpg); background-repeat:no-repeat;
+                                            text-align: center; font-family: Tahoma; font-weight: bold; color: #f8d918; font-size: 10pt;">
+                                            <a href="http://www.irasv1.iub.edu.bd/#/" style="color: #FFFFFF;font-weight:bold; margin-right:15px">Forgot Password</a>
+                                        </td>
+                                    </tr>
+                                    </table>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+       
+    </table>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="footer">
+        &copy;1993 - 2019 Independent University, Bangladesh. All rights reserved.
+    </div>
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("ctl00_cphBody_rfvUserID"), document.getElementById("ctl00_cphBody_rfvPassword"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_cphBody_rfvUserID = document.all ? document.all["ctl00_cphBody_rfvUserID"] : document.getElementById("ctl00_cphBody_rfvUserID");
+ctl00_cphBody_rfvUserID.controltovalidate = "ctl00_cphBody_txtUserID";
+ctl00_cphBody_rfvUserID.errormessage = "*";
+ctl00_cphBody_rfvUserID.validationGroup = "vgLogin";
+ctl00_cphBody_rfvUserID.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+ctl00_cphBody_rfvUserID.initialvalue = "";
+var ctl00_cphBody_rfvPassword = document.all ? document.all["ctl00_cphBody_rfvPassword"] : document.getElementById("ctl00_cphBody_rfvPassword");
+ctl00_cphBody_rfvPassword.controltovalidate = "ctl00_cphBody_txtPassword";
+ctl00_cphBody_rfvPassword.errormessage = "*";
+ctl00_cphBody_rfvPassword.validationGroup = "vgLogin";
+ctl00_cphBody_rfvPassword.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+ctl00_cphBody_rfvPassword.initialvalue = "";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        //]]>
+</script>
+</form>
+</body>
+
+<!-- Mirrored from www.iras.iub.edu.bd/login/Default.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 May 2019 11:22:26 GMT -->
+</html>

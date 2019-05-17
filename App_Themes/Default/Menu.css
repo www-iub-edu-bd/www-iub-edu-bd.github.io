@@ -1,0 +1,136 @@
+﻿body
+{
+}
+.StyleStaticMenuStyle
+{
+	height: 30px;
+	border: 0px;
+	width: 150px;
+	font-family: Tahoma;
+	vertical-align: middle;
+}
+.StyleStaticHoverStyle
+{
+	background-image: url("../../Images/MainMenuLight.jpg" );
+	font-family: Tahoma;
+	font-size: 9pt;
+	vertical-align: middle;
+	height: 30px;
+	width: 150px;
+	text-decoration: none;
+	padding-left: 5px;
+	color: Aqua;
+	font-weight: bold;
+}
+.StyleStaticMenuItemStyle
+{
+	background-image: url("../../Images/MainMenuDark.jpg" );
+	height: 30px;
+	border: 0px;
+	width: 150px;
+	font-family: Tahoma;
+	font-size: 9pt;
+	vertical-align: middle;
+	padding-left: 5px;
+	color: #f8d918;
+	font-weight: bold;
+}
+.StyleDynamicMenuStyle
+{
+	height: 25px;
+	border: 0px;
+	width: 150px;
+	font-family: Tahoma;
+	vertical-align: middle;
+}
+.StyleDynamicMenuItemStyle
+{
+	background-image: url("../../Images/MainMenuDark.jpg" );
+	font-family: Tahoma;
+	font-size: 9pt;
+	vertical-align: middle;
+	height: 25px;
+	width: 150px;
+	text-decoration: none;
+	padding-left: 5px;
+	color: #f8d918;
+	font-weight: bold;
+
+}
+.StyleDynamicHoverStyle
+{
+	background-image: url("../../Images/MainMenuLight.jpg" );
+	font-family: Tahoma;
+	font-size: 9pt;
+	vertical-align: middle;
+	height: 25px;
+	width: 150px;
+	text-decoration: none;
+	
+	padding-left: 5px;
+	color: #f8d918;
+	font-weight: bold;
+}
+
+
+.primaryStaticMenu
+{
+   background-color: transparent;
+   float: left;
+}
+.primaryStaticMenuItem
+{
+   background-color:  #277FAF; 
+   border-width: 1px;
+   border-color: #efefef #aaab9c #ccc #efefef; 
+   border-style: solid;
+   color: #f8d918;
+   font-weight: bold;
+   padding: 0.2em 0.2em 0.2em 0.2em;
+}
+.primaryStaticHover
+{
+   color: #800000;
+   background: #f0e7d7;
+}
+
+.primaryDynamicMenu
+{   
+   background-color: #f7f2ea;               
+   border-bottom: solid 1px #ccc;    
+}  
+.primaryDynamicMenuItem
+{
+   background-color: #277FAF; 
+   color: #f8d918;
+   padding: 0.2em 0.2em 0.2em 0.2em;
+   border-width: 1px;
+   font-weight: bold;
+   border-color: #f7f2ea #aaab9c #f7f2ea #efefef;  
+   border-style: solid;         
+}    
+.primaryDynamicHover
+{
+   color: #800000;
+   background: #f0e7d7;
+}            
+
+.secondaryLevelOne
+{
+   background-color: transparent;
+   background-repeat: repeat-x;
+   margin: 1.5em 0 0 0;
+   padding: 0.2em 0.2em 0.2em 0.2em;
+   width: 12em; 
+   height: 35px;
+}
+.secondaryLevelTwo
+{
+   background: #FAFBFB;
+   padding: 0.2em 0.2em 0.2em 0.2em;
+}
+.secondaryStaticHover
+{
+   color: #800000;
+}
+  

@@ -1,0 +1,48 @@
+﻿
+    body {
+        /* Style */
+        color:#000000;
+        font-family:arial,verdana,sans-serif;
+        font-size:small;
+    }  
+
+    .container {
+        /* So the overflow scrolls */
+        overflow:auto;
+        
+        /* Style */
+        border: 1px solid black; 
+    }
+    
+    .container table th {
+        /* Keep the header cells positioned as we scroll */
+        position:relative;
+        
+        /* Style */
+        color: #F7F6F3;
+        background: #5D7B9D;
+        font-weight: bold;
+       /* border-bottom: solid 1px #CCCCCC;*/
+        text-align: left;
+        padding-left:5px;            
+    }
+    
+    .container table th a {
+        /* Style */
+        color: #F7F6F3;           
+    }            
+    
+    .container table tbody {
+        /* For alignment of the scroll bar */
+        overflow:hidden;
+    }  
+    
+    .container table tbody tr td {
+        /* Style */
+        color: #333333;
+        /*background: White; */
+        border-bottom: solid 1px #CCCCCC;
+        text-align: left;
+        padding-left:3px;
+    }                        
+    
